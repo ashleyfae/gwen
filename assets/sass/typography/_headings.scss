@@ -1,0 +1,51 @@
+h1, h2, h3, h4, h5, h6 {
+    color: #3c3c3c;
+    font: {
+        family: $font-secondary;
+        weight: 300;
+    }
+}
+
+h1 {
+    @include font-size(3.6);
+    line-height: 1.3;
+}
+
+h2 {
+    @include font-size(3.0);
+}
+
+h3 {
+    @include font-size(2.6);
+}
+
+h4 {
+    @include font-size(2.6);
+}
+
+h5 {
+    @include font-size(2.2);
+}
+
+h6 {
+    @include font-size(1.8);
+    color: $color-primary;
+}
+
+#tinymce,
+.entry-content {
+    h2 {
+        @include font-size(2.2);
+        color: $color-primary;
+        letter-spacing: .2em;
+    }
+
+    h3 {
+        @include font-size(2.2);
+    }
+
+    h4 {
+        color: $color-primary;
+        letter-spacing: .2em;
+    }
+}

@@ -1,0 +1,18 @@
+.wp-caption {
+    margin: 0 auto;
+    max-width: 100%;
+
+    &.alignleft {
+        margin-right: 1.5em;
+    }
+
+    &.alignright {
+        margin-left: 1.5em;
+    }
+}
+
+.wp-caption-text {
+    @include subtext;
+    margin: 0;
+    text-align: center;
+}

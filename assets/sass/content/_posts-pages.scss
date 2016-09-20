@@ -1,0 +1,136 @@
+.page-header,
+article.post,
+article.page {
+    margin-bottom: 3em;
+
+    @media (min-width: 768px) {
+        body:not(.single) {
+            margin-bottom: 5em;
+        }
+    }
+}
+
+.page-header {
+    border-bottom: 3px double #ebebeb;
+    padding-bottom: 11px;
+    position: relative;
+
+    &:after {
+        border-bottom: 1px solid #ebebeb;
+        content: '';
+        display: block;
+        width: 100%;
+        position: absolute;
+        bottom: 1px;
+    }
+}
+
+.entry-title,
+.page-title,
+.comments-title,
+#reply-title {
+    @include color($color-primary);
+    margin: 0;
+}
+
+.entry-meta {
+    @include subtext;
+
+    .posted-in {
+        font: {
+            style: italic;
+        }
+        text-transform: lowercase;
+    }
+
+    .entry-categories {
+        a {
+            text-decoration: underline;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.entry-date {
+    &:not(.updated) {
+        display: none;
+    }
+}
+
+.more-link {
+    @include subtext($color-primary);
+    padding: 8px 12px;
+
+    @media (min-width: 768px) {
+        border-left: 3px double #ebebeb;
+        flex-grow: 0;
+        margin-left: auto;
+        max-width: 50%;
+        text-align: right;
+    }
+}
+
+.entry-footer {
+    @include subtext(#707070);
+    border: 3px double #ebebeb;
+    padding: 1px;
+    position: relative;
+    text-align: center;
+
+    .more-link {
+        color: $color-primary;
+    }
+
+    &:before {
+        border: 1px solid #ebebeb;
+        position: absolute;
+        top: 1px;
+        right: 1px;
+        bottom: 1px;
+        left: 1px;
+    }
+
+    &:before, &:after {
+        content: '';
+        clear: both;
+        display: block;
+    }
+
+    > * {
+        position: relative;
+    }
+
+    .entry-tags {
+        display: inline-block;
+        padding: 8px 12px;
+    }
+
+    @media (min-width: 768px) {
+        &.nss-enabled {
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+
+            .entry-tags {
+                border-left: 3px double #ebebeb;
+                flex-grow: 0;
+                margin-left: auto;
+                max-width: 50%;
+                position: relative;
+                text-align: right;
+
+                &:before {
+                    border-left: 3px double #ebebeb;
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: -5px;
+                }
+            }
+        }
+    }
+}

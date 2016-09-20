@@ -1,0 +1,40 @@
+#pagination {
+    @include subtext($color-primary);
+    text-align: center;
+
+    a {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
+@media (min-width: 768px) {
+    #pagination {
+        align-items: center;
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+    }
+
+    #pagination-next,
+    #pagination-previous {
+        flex: auto;
+        max-width: 40%;
+    }
+
+    #pagination-next {
+        text-align: left;
+
+        span {
+            float: right;
+        }
+    }
+
+    #pagination-previous {
+        text-align: right;
+
+        span {
+            float: left;
+        }
+    }
+}

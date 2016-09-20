@@ -1,0 +1,11 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#masthead,
+#content,
+.site-info {
+    @include container;
+    padding: 0 15px;
+}

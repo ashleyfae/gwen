@@ -1,0 +1,18 @@
+.button,
+button,
+input[type="submit"],
+#pagination a {
+    @include subtext($color-primary);
+    background: $color-secondary;
+    border: 1px solid $color-secondary;
+    padding: 1em 1.5em;
+
+    &:hover {
+        background-color: darken($color-secondary, 5);
+        border-color: darken($color-secondary, 5);
+    }
+
+    &:focus {
+        outline: 0;
+    }
+}

@@ -1,0 +1,34 @@
+#page {
+    border-top: 30px solid $color-secondary;
+}
+
+#masthead {
+    padding-top: 30px;
+    text-align: center;
+}
+
+.site-branding {
+    margin: 4em 0;
+}
+
+.site-title {
+    @include font-size(5.2);
+    font: {
+        weight: 100;
+    }
+    margin: 0;
+    text-transform: uppercase;
+
+    a {
+        color: #cecece;
+    }
+
+    @media (min-width: 600px) {
+        @include font-size(7.2);
+    }
+}
+
+.site-description {
+    @include subtext;
+    margin: 0;
+}

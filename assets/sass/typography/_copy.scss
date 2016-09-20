@@ -1,0 +1,23 @@
+body {
+    @include font-size(1.8);
+    color: #5d5d5d;
+    font: {
+        family: $font-primary;
+        weight: normal;
+    }
+    line-height: 1.7;
+}
+
+p {
+    margin: 1em 0;
+}
+
+blockquote {
+    border-left: 14px solid $color-secondary;
+    margin: 2em 0;
+    padding-left: 14px;
+
+    @media (min-width: 768px) {
+        margin-left: -28px;
+    }
+}

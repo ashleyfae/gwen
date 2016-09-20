@@ -1,0 +1,32 @@
+.naked-social-share {
+
+    ul {
+        font: {
+            weight: bold;
+        }
+        letter-spacing: 0.2em;
+        list-style: none;
+        margin: 0;
+        padding: 8px 12px;
+        text-transform: uppercase;
+    }
+
+    li {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    .fa {
+        @include font-size(1.4);
+    }
+
+    @media (min-width: 768px) {
+        position: relative;
+        top: 1px;
+        text-align: left;
+    }
+}
+
+.nss-site-name {
+    @include screen-reader-text;
+}

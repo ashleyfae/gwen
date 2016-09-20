@@ -1,0 +1,121 @@
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="telephone"],
+input[type="text"],
+input[type="url"],
+textarea {
+    background: white;
+    border: 3px double #ebebeb;
+    padding: 1em 1.5em;
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+/* Search */
+
+.search-form {
+    align-items: center;
+    border: 3px double #ebebeb;
+    display: flex;
+    padding: 1px;
+    position: relative;
+
+    &:before {
+        content: '';
+        clear: both;
+        border: 1px solid #ebebeb;
+        position: absolute;
+        top: 1px;
+        right: 1px;
+        bottom: 1px;
+        left: 1px;
+    }
+
+    input[type="search"] {
+        background: none;
+        border: none;
+        display: block;
+        flex: 1;
+        letter-spacing: .1em;
+        padding: 5px 15px;
+        position: relative;
+    }
+
+    input[type="submit"] {
+        background: none;
+        border: none;
+        flex: 0;
+        margin-left: auto;
+        padding: 5px 15px;
+        position: relative;
+    }
+}
+
+::-webkit-input-placeholder {
+    color: #5d5d5d;
+}
+
+::-moz-placeholder {
+    color: #5d5d5d;
+}
+
+:-moz-placeholder {
+    color: #5d5d5d;
+}
+
+:-ms-input-placeholder {
+    color: #5d5d5d;
+}
+
+/* Opt In */
+.email-subscribe {
+    clear: both;
+    display: flex;
+
+    .highlight & {
+        border-top: 3px double #ebebeb;
+        margin: 0 -15px -10px;
+        padding: 1px 0 0;
+        position: relative;
+
+        :before {
+            border-top: 1px solid #ebebeb;
+            content: '';
+            display: block;
+            position: absolute;
+            top: 1px;
+            right: 1px;
+            bottom: 1px;
+            left: 1px;
+        }
+    }
+
+    label {
+        @include screen-reader-text;
+    }
+
+    input[type="email"],
+    input[type="text"] {
+        background: none;
+        border: none;
+        display: block;
+        flex: 1;
+        letter-spacing: .1em;
+        padding: 5px 15px;
+        position: relative;
+    }
+
+    button,
+    input[type="submit"] {
+        background: none;
+        border: none;
+        flex: 0;
+        margin-left: auto;
+        padding: 5px 15px;
+        position: relative;
+    }
+}
