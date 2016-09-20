@@ -55,23 +55,36 @@ function gwen_posted_on() {
 	<?php endif;
 }
 
+/**
+ * Post Footer
+ *
+ * Displays share icons (if Naked Social Share is activated) and
+ * either "Continue Reading" button (archives) or post tags (single
+ * post pages).
+ *
+ * @since 1.0
+ * @return void
+ */
 function gwen_entry_footer() {
+	if ( get_post_type() != 'post' ) {
+		return;
+	}
+
 	?>
 	<footer class="entry-footer<?php echo function_exists( 'naked_social_share_buttons' ) ? ' nss-enabled' : ''; ?>">
 		<?php
-		if ( get_post_type() == 'post' ) :
-			if ( function_exists( 'naked_social_share_buttons' ) ) {
-				naked_social_share_buttons();
-			}
+		if ( function_exists( 'naked_social_share_buttons' ) ) {
+			naked_social_share_buttons();
+		}
 
-			if ( is_singular() ) {
-				the_tags( '<span class="entry-tags">', ', ', '</span>' );
-			} else {
-				?>
-				<a href="<?php echo esc_url( get_permalink() ); ?>" class="more-link"><?php _e( 'Continue Reading &raquo;', 'elizabeth' ); ?></a>
-				<?php
-			}
-		endif; ?>
+		if ( is_singular() ) {
+			the_tags( '<span class="entry-tags">', ', ', '</span>' );
+		} else {
+			?>
+			<a href="<?php echo esc_url( get_permalink() ); ?>" class="more-link"><?php _e( 'Continue Reading &raquo;', 'elizabeth' ); ?></a>
+			<?php
+		}
+		?>
 	</footer>
 	<?php
 }

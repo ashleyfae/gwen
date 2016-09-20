@@ -12,7 +12,10 @@
 }
 
 .wp-caption-text {
-    @include subtext;
+    @include font-size(1.4);
+    font: {
+        style: italic;
+    }
     margin: 0;
     text-align: center;
 }

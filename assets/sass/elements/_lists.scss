@@ -1,0 +1,52 @@
+#tinymce,
+.entry-content {
+    ol, ul {
+        list-style: none;
+        margin: 1.5em 0;
+        padding: 0;
+
+        li {
+            margin: .5em 0;
+            position: relative;
+
+            &:before {
+                background: $color-secondary;
+                display: inline-block;
+                position: absolute;
+                left: 0;
+            }
+        }
+    }
+
+    ol {
+        counter-reset: section;
+
+        li {
+            padding: 0 0 0 38px;
+
+            &:before {
+                content: counters(section, ".") " ";
+                counter-increment: section;
+                padding: 0 11px;
+                top: 0;
+            }
+        }
+    }
+
+    ul {
+        li {
+            padding: 0 0 0 35px;
+
+            &:before {
+                @include font-size(0.7);
+                content: '\f111';
+                font: {
+                    family: FontAwesome;
+                }
+                line-height: 1;
+                padding: 8px;
+                top: 2px;
+            }
+        }
+    }
+}

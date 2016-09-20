@@ -4,17 +4,13 @@ table {
     thead {
         th {
             @include subtext;
-            background: #f0f0f0;
-            font: {
-                weight: bold;
-            }
+            background: $color-secondary;
             padding: 1em;
-            text-transform: uppercase;
         }
     }
 
     td {
-        border: 1px solid #f0f0f0;
+        //border: 1px solid #f0f0f0;
         padding: .5em;
     }
 }
