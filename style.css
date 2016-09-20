@@ -275,7 +275,7 @@ blockquote {
 ## Headings
 --------------------------------------------------------------*/
 h1, h2, h3, h4, h5, h6 {
-  color: #3c3c3c;
+  color: #2a3876;
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-weight: 300;
 }
@@ -309,25 +309,39 @@ h5 {
 h6 {
   font-size: 28.8px;
   font-size: 1.8rem;
-  color: #2a3876;
 }
 
-#tinymce h2,
-.entry-content h2 {
-  font-size: 35.2px;
-  font-size: 2.2rem;
-  color: #2a3876;
-  letter-spacing: .2em;
+#tinymce h3, #tinymce h5,
+.entry-content h3,
+.entry-content h5 {
+  font-size: 22.4px;
+  font-size: 1.4rem;
+  color: #858585;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  letter-spacing: .25em;
+  text-transform: uppercase;
 }
-#tinymce h3,
-.entry-content h3 {
-  font-size: 35.2px;
-  font-size: 2.2rem;
+#tinymce h3 a, #tinymce h5 a,
+.entry-content h3 a,
+.entry-content h5 a {
+  color: #858585;
 }
-#tinymce h4,
-.entry-content h4 {
+#tinymce h4, #tinymce h6,
+.entry-content h4,
+.entry-content h6 {
+  font-size: 22.4px;
+  font-size: 1.4rem;
   color: #2a3876;
-  letter-spacing: .2em;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+}
+#tinymce h4 a, #tinymce h6 a,
+.entry-content h4 a,
+.entry-content h6 a {
+  color: #2a3876;
 }
 
 /*--------------------------------------------------------------
