@@ -89,12 +89,7 @@
         }
 
         input {
-            @include font-size(1.5);
             text-transform: lowercase;
-        }
-
-        textarea {
-            @include font-size(1.5);
         }
     }
 

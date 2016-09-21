@@ -409,6 +409,8 @@ input[type="telephone"],
 input[type="text"],
 input[type="url"],
 textarea {
+  font-size: 24px;
+  font-size: 1.5rem;
   background: white;
   border: 3px double #ebebeb;
   padding: 1em 1.5em;
@@ -1201,16 +1203,7 @@ article.page {
 #commentform .comment-form-author input,
 #commentform .comment-form-email input,
 #commentform .comment-form-url input {
-  font-size: 24px;
-  font-size: 1.5rem;
   text-transform: lowercase;
-}
-#commentform .comment-form-comment textarea,
-#commentform .comment-form-author textarea,
-#commentform .comment-form-email textarea,
-#commentform .comment-form-url textarea {
-  font-size: 24px;
-  font-size: 1.5rem;
 }
 #commentform input[type="email"],
 #commentform input[type="number"],
