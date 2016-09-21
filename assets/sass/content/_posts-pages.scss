@@ -73,6 +73,10 @@ article.page {
     }
 }
 
+.featured-image {
+    margin-top: .5em;
+}
+
 .entry-footer {
     @include subtext(#707070);
     border: 3px double #ebebeb;

@@ -64,8 +64,7 @@ function gwen_header_style() {
 			else :
 		?>
 		.site-title a,
-		.site-title a:hover,
-		.site-description {
+		.site-title a:hover {
 			color: #<?php echo esc_attr( $header_text_color ); ?>;
 		}
 

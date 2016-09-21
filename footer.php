@@ -36,7 +36,7 @@ if ( get_page_template_slug() != 'page-layouts/full-width.php' ) {
 		<span id="gwen-credits">
 			<?php
 			printf(
-				'<a href="' . esc_url( gwen_theme_credit_url() ) . '" target="_blank" rel="nofollow">%1$s</a>',
+				'<a href="' . esc_url( 'https://github.com/nosegraze/gwen' ) . '" target="_blank" rel="nofollow">%1$s</a>',
 				__( 'Gwen Theme', 'gwen' )
 			);
 

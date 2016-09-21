@@ -52,6 +52,11 @@ textarea {
         margin-left: auto;
         padding: 5px 15px;
         position: relative;
+
+        &:hover {
+            background: none;
+            border: none;
+        }
     }
 }
 
@@ -117,5 +122,10 @@ textarea {
         margin-left: auto;
         padding: 5px 15px;
         position: relative;
+
+        &:hover {
+            background: none;
+            border: none;
+        }
     }
 }

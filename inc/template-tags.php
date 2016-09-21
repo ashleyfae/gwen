@@ -56,6 +56,22 @@ function gwen_posted_on() {
 }
 
 /**
+ * Maybe Display Featured Image
+ *
+ * @since 1.0
+ * @return void
+ */
+function gwen_featured_image() {
+	if ( ( get_theme_mod( 'auto_add_featured', true ) || is_customize_preview() ) && has_post_thumbnail() ) {
+		?>
+		<div class="featured-image"<?php echo ( ! get_theme_mod( 'auto_add_featured', true ) ) ? ' style="display: none;"' : ''; ?>>
+			<?php the_post_thumbnail( 'large' ); ?>
+		</div>
+		<?php
+	}
+}
+
+/**
  * Post Footer
  *
  * Displays share icons (if Naked Social Share is activated) and
@@ -111,29 +127,6 @@ function gwen_get_copyright_message() {
 	);
 
 	return str_replace( $find, $replace, get_theme_mod( 'footer_text', sprintf( __( '&copy; %s %s. All Rights Reserved.', 'gwen' ), '[current-year]', '[site-title]' ) ) );
-}
-
-/**
- * Generates the link to the Gwen purchase page.
- *
- * Appends the affiliate ID number if provided.
- *
- * @todo
- *
- * @since 1.0
- * @return string
- */
-function gwen_theme_credit_url() {
-	$aff_id = get_theme_mod( 'affiliate_id' );
-	$url    = 'https://shop.nosegraze.com/product/gwen-theme/';
-
-	if ( empty( $aff_id ) || ! is_numeric( $aff_id ) ) {
-		return $url;
-	}
-
-	$new_url = add_query_arg( array( 'ref' => intval( $aff_id ) ), $url );
-
-	return apply_filters( 'gwen/theme-credit-url', $new_url );
 }
 
 /**

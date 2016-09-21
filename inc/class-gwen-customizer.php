@@ -72,10 +72,11 @@ class Gwen_Customizer {
 		 * Change existing settings.
 		 */
 
-		$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
-		$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-		$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
-		$wp_customize->get_setting( 'custom_logo' )->transport      = 'refresh';
+		$wp_customize->get_setting( 'blogname' )->transport          = 'postMessage';
+		$wp_customize->get_setting( 'blogdescription' )->transport   = 'postMessage';
+		$wp_customize->get_setting( 'header_textcolor' )->transport  = 'postMessage';
+		$wp_customize->get_setting( 'header_image' )->transport      = 'postMessage';
+		$wp_customize->get_setting( 'header_image_data' )->transport = 'postMessage';
 
 	}
 
@@ -92,14 +93,28 @@ class Gwen_Customizer {
 
 		/* Primary Colour */
 		$wp_customize->add_setting( 'primary_colour', array(
-			'default'           => '#96ad8a',
+			'default'           => '#2a3876',
 			'sanitize_callback' => 'sanitize_hex_color'
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'primary_colour', array(
-			'label'    => esc_html__( 'Primary Colour', 'gwen' ),
-			'section'  => 'colors',
-			'settings' => 'primary_colour',
-			'priority' => 15
+			'label'       => esc_html__( 'Primary Colour', 'gwen' ),
+			'description' => __( 'Used in post titles and link colours.', 'gwen' ),
+			'section'     => 'colors',
+			'settings'    => 'primary_colour',
+			'priority'    => 15
+		) ) );
+
+		/* Secondary Colour */
+		$wp_customize->add_setting( 'secondary_colour', array(
+			'default'           => '#f0eee4',
+			'sanitize_callback' => 'sanitize_hex_color'
+		) );
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'secondary_colour', array(
+			'label'       => esc_html__( 'Secondary Colour', 'gwen' ),
+			'description' => __( 'Top border colour, footer background, and button backgrounds.', 'gwen' ),
+			'section'     => 'colors',
+			'settings'    => 'secondary_colour',
+			'priority'    => 17
 		) ) );
 
 	}
@@ -132,6 +147,20 @@ class Gwen_Customizer {
 			'priority' => 10
 		) ) );
 
+		/* Auto Add Featured Images */
+		$wp_customize->add_setting( 'auto_add_featured', array(
+			'default'           => true,
+			'sanitize_callback' => array( $this, 'sanitize_checkbox' ),
+			'transport'        => 'postMessage'
+		) );
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'auto_add_featured', array(
+			'label'    => esc_html__( 'Auto add featured images above post content', 'gwen' ),
+			'type'     => 'checkbox',
+			'section'  => 'blog_posts',
+			'settings' => 'auto_add_featured',
+			'priority' => 20
+		) ) );
+
 	}
 
 	/**
@@ -144,21 +173,6 @@ class Gwen_Customizer {
 	 * @return void
 	 */
 	private function footer_section( $wp_customize ) {
-
-		/* Affiliate ID */
-		$wp_customize->add_setting( 'affiliate_id', array(
-			'default'           => '',
-			'sanitize_callback' => 'absint',
-			'transport'         => 'postMessage'
-		) );
-		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'affiliate_id', array(
-			'label'       => esc_html__( 'Affiliate ID', 'gwen' ),
-			'description' => esc_html__( 'Enter your Nose Graze affiliate ID number to add it to the theme URL in the footer.', 'gwen' ),
-			'type'        => 'text',
-			'section'     => 'footer',
-			'settings'    => 'affiliate_id',
-			'priority'    => 20
-		) ) );
 
 		/* Copyright Message */
 		$wp_customize->add_setting( 'copyright_message', array(
@@ -176,9 +190,22 @@ class Gwen_Customizer {
 			'default'     => '',
 			'section'     => 'footer',
 			'settings'    => 'copyright_message',
-			'priority'    => 40
+			'priority'    => 20
 		) ) );
 
+	}
+
+	/**
+	 * Sanitize: Checkbox
+	 *
+	 * @param bool $input
+	 *
+	 * @access public
+	 * @since  1.0
+	 * @return bool
+	 */
+	public function sanitize_checkbox( $input ) {
+		return $input ? true : false;
 	}
 
 	/**

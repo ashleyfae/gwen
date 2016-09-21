@@ -10,6 +10,26 @@
 
     var currentTime = new Date();
 
+    // Header image
+    wp.customize('header_image', function (value) {
+        value.bind(function (to) {
+            var banner = $('#site-banner');
+
+            // Check if we're removing the image.
+            if (to == 'remove-header') {
+                banner.remove();
+
+                return;
+            }
+
+            if (banner.length > 0) {
+                banner.find('img').attr('src', to);
+            } else {
+                $('.site-branding').prepend('<a href="' + '" rel="home" id="site-banner"><img src="' + to + '" alt=""></a>');
+            }
+        });
+    });
+
     // Site title and description.
     wp.customize('blogname', function (value) {
         value.bind(function (to) {
@@ -30,49 +50,24 @@
                     'clip': 'rect(1px, 1px, 1px, 1px)',
                     'position': 'absolute'
                 });
-
-                $('body').addClass('hidden-header-text');
             } else {
                 $('.site-title a, .site-description').css({
-                    'color': to,
                     'clip': 'auto',
                     'position': 'relative'
                 });
 
-                $('body').removeClass('hidden-header-text');
+                $('.site-title a').css('color', to);
             }
         });
     });
 
-    // Primary colour
-    wp.customize('primary_colour', function (value) {
-        value.bind(function (to) {
-            $('.entry-title, .page-title, .comments-title, #reply-title, a, .button, button, input[type="submit"], #pagination a, h1, h2, h3, h4, h5, h6, .entry-footer .more-link').css('color', to);
-
-        });
-    });
-
-    // Secondary colour
-    wp.customize('secondary_colour', function (value) {
-        value.bind(function (to) {
-            $('#page').css('border-top-color', to);
-            $('blockquote').css('border-left-color', to);
-            $('.button, button, input[type="submit"], #pagination a').css({
-                'background': to,
-                'border-color': to
-            });
-            $('#footer, ol li:before, ul li:before, table thead th').css('background', to);
-
-        });
-    });
-
-    // Affiliate ID
-    wp.customize('affiliate_id', function (value) {
+    // Featured image
+    wp.customize('auto_add_featured', function (value) {
         value.bind(function (to) {
             if (to) {
-                $('#gwen-credits a').attr('href', 'https://shop.nosegraze.com/product/gwen-theme/?ref=' + to);
+                $('.featured-image').show();
             } else {
-                $('#gwen-credits a').attr('href', 'https://shop.nosegraze.com/product/gwen-theme/');
+                $('.featured-image').hide();
             }
         });
     });

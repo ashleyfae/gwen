@@ -29,6 +29,8 @@
 	<div class="entry-content">
 		<?php
 		if ( is_singular() || get_theme_mod( 'excerpt_type', 'automatic' ) == 'manual' ) {
+			gwen_featured_image();
+
 			the_content( false );
 		} else {
 			the_excerpt();

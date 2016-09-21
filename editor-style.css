@@ -314,6 +314,10 @@ textarea:focus {
   padding: 5px 15px;
   position: relative;
 }
+.search-form input[type="submit"]:hover {
+  background: none;
+  border: none;
+}
 
 ::-webkit-input-placeholder {
   color: #5d5d5d;
@@ -397,6 +401,11 @@ textarea:focus {
   margin-left: auto;
   padding: 5px 15px;
   position: relative;
+}
+.email-subscribe button:hover,
+.email-subscribe input[type="submit"]:hover {
+  background: none;
+  border: none;
 }
 
 /*--------------------------------------------------------------

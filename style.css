@@ -451,6 +451,10 @@ textarea:focus {
   padding: 5px 15px;
   position: relative;
 }
+.search-form input[type="submit"]:hover {
+  background: none;
+  border: none;
+}
 
 ::-webkit-input-placeholder {
   color: #5d5d5d;
@@ -534,6 +538,11 @@ textarea:focus {
   margin-left: auto;
   padding: 5px 15px;
   position: relative;
+}
+.email-subscribe button:hover,
+.email-subscribe input[type="submit"]:hover {
+  background: none;
+  border: none;
 }
 
 /*--------------------------------------------------------------
@@ -861,7 +870,7 @@ a:hover {
   margin: 0;
   text-transform: uppercase;
 }
-.site-title a {
+.site-title a, .site-title a:hover {
   color: #cecece;
 }
 @media (min-width: 600px) {
@@ -977,6 +986,10 @@ article.page {
     max-width: 50%;
     text-align: right;
   }
+}
+
+.featured-image {
+  margin-top: .5em;
 }
 
 .entry-footer {
