@@ -19,6 +19,10 @@
  *
  * Gwen is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
  * Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+ @todo Customizer and custom CSS
+ @todo Table of contents numbers
+ @todo Code formatting
  */
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
@@ -200,20 +204,18 @@ th {
     clear: both;
   }
 
-  #sidebar {
+  body:not(.page-template-full-width) #sidebar {
     float: right;
     position: relative;
     z-index: 50;
     width: 262px;
   }
-
-  #primary {
+  body:not(.page-template-full-width) #primary {
     float: left;
     margin: 0 0 0 -321px;
     width: 100%;
   }
-
-  #main {
+  body:not(.page-template-full-width) #main {
     margin-left: 321px;
   }
 }

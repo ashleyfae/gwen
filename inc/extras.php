@@ -10,16 +10,6 @@
  * @license   GPL2+
  */
 
-function gwen_body_classes( $classes ) {
-	if ( ! display_header_text() ) {
-		$classes[] = 'hidden-header-text';
-	}
-
-	return $classes;
-}
-
-add_filter( 'body_class', 'gwen_body_classes' );
-
 /**
  * Register Widget Scripts
  *

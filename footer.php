@@ -14,7 +14,11 @@
 
 </div><!-- #primary -->
 
-<?php get_sidebar(); ?>
+<?php
+if ( get_page_template_slug() != 'page-layouts/full-width.php' ) {
+	get_sidebar();
+}
+?>
 
 </div><!-- #content -->
 
