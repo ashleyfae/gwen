@@ -45,12 +45,12 @@ if ( post_password_required() ) {
 
 		<ol class="comment-list">
 			<?php
-			wp_list_comments( array(
+			wp_list_comments( apply_filters( 'gwen/comments/wp-list-comments-args', array(
 				'avatar_size' => 60,
-				'callback'   => 'gwen_comment_layout',
-				'style'      => 'ol',
-				'short_ping' => true,
-			) );
+				'callback'    => 'gwen_comment_layout',
+				'style'       => 'ol',
+				'short_ping'  => true,
+			) ) );
 			?>
 		</ol>
 
@@ -84,7 +84,7 @@ if ( post_password_required() ) {
 	$req       = get_option( 'require_name_email' );
 	$aria_req  = ( $req ? " aria-required='true'" : '' );
 
-	comment_form( array(
+	comment_form( apply_filters('gwen/comments/comment-form-args', array(
 		'fields'               => array(
 			'author' =>
 				'<p class="comment-form-author"><label for="author">' . __( 'Name', 'gwen' ) .
@@ -110,7 +110,7 @@ if ( post_password_required() ) {
 		'title_reply_before'   => '<h3 id="reply-title" class="comment-reply-title"><span>',
 		'title_reply_after'    => '</span></h3>',
 		'label_submit'         => __( 'Submit &raquo;', 'gwen' )
-	) );
+	) ));
 	?>
 
 </div>
