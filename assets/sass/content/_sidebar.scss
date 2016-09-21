@@ -58,6 +58,11 @@
     p {
         margin-top: 0;
     }
+
+    &:last-child {
+        background: none;
+        padding-bottom: 0;
+    }
 }
 
 .widget-title {
