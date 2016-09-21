@@ -152,6 +152,9 @@ function gwen_comment_layout( $comment, $args, $depth ) {
 
 /**
  * Register TinyMCE Stylesheet
+ *
+ * @since 1.0
+ * @return void
  */
 function gwen_editor_style() {
 	$font_url = str_replace( ',', '%2C', 'https://fonts.googleapis.com/css?family=Balthazar|Roboto:100,300,700,700i' );

@@ -97,7 +97,7 @@ function gwen_entry_footer() {
 			the_tags( '<span class="entry-tags">', ', ', '</span>' );
 		} else {
 			?>
-			<a href="<?php echo esc_url( get_permalink() ); ?>" class="more-link"><?php _e( 'Continue Reading &raquo;', 'elizabeth' ); ?></a>
+			<a href="<?php echo esc_url( get_permalink() ); ?>" class="more-link"><?php _e( 'Continue Reading &raquo;', 'gwen' ); ?></a>
 			<?php
 		}
 		?>
