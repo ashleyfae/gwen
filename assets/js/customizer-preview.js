@@ -44,13 +44,25 @@
         });
     });
 
-    // Background colour.
-    wp.customize('background_color', function (value) {
+    // Primary colour
+    wp.customize('primary_colour', function (value) {
         value.bind(function (to) {
-            $('.entry-title > a, .entry-title > span').css({
-                'background-color': to,
-                'border-right-color': to
+            $('.entry-title, .page-title, .comments-title, #reply-title, a, .button, button, input[type="submit"], #pagination a, h1, h2, h3, h4, h5, h6, .entry-footer .more-link').css('color', to);
+
+        });
+    });
+
+    // Secondary colour
+    wp.customize('secondary_colour', function (value) {
+        value.bind(function (to) {
+            $('#page').css('border-top-color', to);
+            $('blockquote').css('border-left-color', to);
+            $('.button, button, input[type="submit"], #pagination a').css({
+                'background': to,
+                'border-color': to
             });
+            $('#footer, ol li:before, ul li:before, table thead th').css('background', to);
+
         });
     });
 

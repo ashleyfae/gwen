@@ -47,20 +47,24 @@ function gwen_get_custom_css() {
 	$colour = get_theme_mod( 'primary_colour' );
 	if ( $colour ) {
 		$css .= sprintf(
-			'.entry-title:before, .comments-title:before, #reply-title:before { background: %1$s; }
-			a, #tinymce h2, .entry-content h2, #tinymce h2, .entry-content h4, #tinymce h2, .entry-content h6, blockquote:before, #commentform .form-submit input[type="submit"] { color: %1$s; }
-			a:hover, #commentform .form-submit input[type="submit"]:hover { color: %2$s; }',
+			'.entry-title, .page-title, .comments-title, #reply-title, a, .button, button, input[type="submit"], #pagination a, h1, h2, h3, h4, h5, h6, .entry-footer .more-link { color: %1$s; }
+			a:hover, .button:hover, button:hover, input[type="submit"]:hover, #pagination a:hover { color: %2$s; }',
 			esc_html( $colour ),
 			esc_html( gwen_adjust_brightness( $colour, - 30 ) )
 		);
 	}
 
-	// BG Colour
-	$bg_colour = get_background_color();
-	if ( $bg_colour && $bg_colour != 'ffffff' ) {
+	// Secondary Colour
+	$colour = get_theme_mod( 'secondary_colour' );
+	if ( $colour ) {
 		$css .= sprintf(
-			'.entry-title > a, .entry-title > span, .comments-title > a, .comments-title > span, #reply-title > a, #reply-title > span { background-color: %s; border-right-color: %s; }',
-			esc_html( $bg_colour )
+			'#page { border-top-color: %1$s; }
+			blockquote { border-left-color: %1$s; }
+			.button, button, input[type="submit"], #pagination a { background: %1$s; border-color: %1$s; }
+			#footer, ol li:before, ul li:before, table thead th { background-color: %1$s; }
+			.button:hover, button:hover, input[type="submit"]:hover, #pagination a:hover { background: %2$s; border-color: %2$s; }',
+			esc_html( $colour ),
+			esc_html( gwen_adjust_brightness( $colour, - 10 ) )
 		);
 	}
 
