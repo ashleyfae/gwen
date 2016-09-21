@@ -981,6 +981,7 @@ article.page {
   font-weight: bold;
   letter-spacing: .25em;
   text-transform: uppercase;
+  display: block;
   padding: 8px 12px;
 }
 .more-link a {

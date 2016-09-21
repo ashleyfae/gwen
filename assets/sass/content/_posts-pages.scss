@@ -62,6 +62,7 @@ article.page {
 
 .more-link {
     @include subtext($color-primary);
+    display: block;
     padding: 8px 12px;
 
     @media (min-width: 768px) {
