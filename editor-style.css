@@ -645,3 +645,6 @@ body#tinymce {
   margin: 9px 10px;
   max-width: 662px;
 }
+body#tinymce blockquote {
+  margin-left: 0 !important;
+}
