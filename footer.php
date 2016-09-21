@@ -23,7 +23,7 @@ if ( get_page_template_slug() != 'page-layouts/full-width.php' ) {
 </div><!-- #content -->
 
 <footer id="colophon" class="site-footer" role="contentinfo">
-	<?php do_action( 'gwen/footer' ); ?>
+	<?php do_action( 'gwen/footer/before-site-info' ); ?>
 
 	<div class="site-info">
 		<?php
