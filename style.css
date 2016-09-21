@@ -20,7 +20,6 @@
  * Gwen is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
  * Underscores is distributed under the terms of the GNU GPL v2 or later.
 
- @todo Customizer and custom CSS
  @todo Table of contents numbers
  @todo Code formatting
  */
@@ -349,6 +348,18 @@ h6 {
 /*--------------------------------------------------------------
 ## Code
 --------------------------------------------------------------*/
+code, pre {
+  @incloude font-size(1.5);
+  background: #f4f4f4;
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+pre {
+  display: block;
+  overflow: auto;
+  padding: 1em;
+}
+
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
