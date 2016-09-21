@@ -73,7 +73,7 @@ if ( post_password_required() ) {
 	// If comments are closed and there are comments, let's leave a little note, shall we?
 	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
 
-		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'gwen' ); ?></p>
+		<p class="no-comments"><?php echo apply_filters( 'gwen/coments/comments-closed-message', esc_html__( 'Comments are closed.', 'gwen' ) ); ?></p>
 		<?php
 	endif;
 
@@ -84,7 +84,7 @@ if ( post_password_required() ) {
 	$req       = get_option( 'require_name_email' );
 	$aria_req  = ( $req ? " aria-required='true'" : '' );
 
-	comment_form( apply_filters('gwen/comments/comment-form-args', array(
+	comment_form( apply_filters( 'gwen/comments/comment-form-args', array(
 		'fields'               => array(
 			'author' =>
 				'<p class="comment-form-author"><label for="author">' . __( 'Name', 'gwen' ) .
@@ -110,7 +110,7 @@ if ( post_password_required() ) {
 		'title_reply_before'   => '<h3 id="reply-title" class="comment-reply-title"><span>',
 		'title_reply_after'    => '</span></h3>',
 		'label_submit'         => __( 'Submit &raquo;', 'gwen' )
-	) ));
+	) ) );
 	?>
 
 </div>
