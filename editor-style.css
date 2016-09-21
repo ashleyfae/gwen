@@ -360,7 +360,7 @@ textarea:focus {
   padding: 1px 0 0;
   position: relative;
 }
-.highlight .email-subscribe :before {
+.highlight .email-subscribe:before {
   border-top: 1px solid #ebebeb;
   content: '';
   display: block;

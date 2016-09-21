@@ -70,7 +70,17 @@ article.page {
         flex-grow: 0;
         margin-left: auto;
         max-width: 50%;
+        position: relative;
         text-align: right;
+
+        &:before {
+            content: '';
+            border-left: 1px solid #ebebeb;
+            position: absolute;
+            top: 1px;
+            bottom: 1px;
+            left: 1px;
+        }
     }
 }
 
@@ -84,10 +94,6 @@ article.page {
     padding: 1px;
     position: relative;
     text-align: center;
-
-    .more-link {
-        color: $color-primary;
-    }
 
     &:before {
         border: 1px solid #ebebeb;

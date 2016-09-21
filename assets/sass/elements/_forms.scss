@@ -88,7 +88,7 @@ textarea {
         padding: 1px 0 0;
         position: relative;
 
-        :before {
+        &:before {
             border-top: 1px solid #ebebeb;
             content: '';
             display: block;

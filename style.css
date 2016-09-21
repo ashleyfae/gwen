@@ -493,7 +493,7 @@ textarea:focus {
   padding: 1px 0 0;
   position: relative;
 }
-.highlight .email-subscribe :before {
+.highlight .email-subscribe:before {
   border-top: 1px solid #ebebeb;
   content: '';
   display: block;
@@ -996,7 +996,16 @@ article.page {
     flex-grow: 0;
     margin-left: auto;
     max-width: 50%;
+    position: relative;
     text-align: right;
+  }
+  .more-link:before {
+    content: '';
+    border-left: 1px solid #ebebeb;
+    position: absolute;
+    top: 1px;
+    bottom: 1px;
+    left: 1px;
   }
 }
 
@@ -1019,9 +1028,6 @@ article.page {
 }
 .entry-footer a {
   color: #707070;
-}
-.entry-footer .more-link {
-  color: #2a3876;
 }
 .entry-footer:before {
   border: 1px solid #ebebeb;
@@ -1331,7 +1337,7 @@ article.page {
 .widget p {
   margin-top: 0;
 }
-.widget:last-child {
+.widget:last-child:not(.highlight) {
   background: none;
   padding-bottom: 0;
 }
