@@ -36,8 +36,9 @@ if ( get_page_template_slug() != 'page-layouts/full-width.php' ) {
 		<span id="gwen-credits">
 			<?php
 			printf(
-				'<a href="' . esc_url( 'https://github.com/nosegraze/gwen' ) . '" target="_blank" rel="nofollow">%1$s</a>',
-				__( 'Gwen Theme', 'gwen' )
+				'<a href="' . esc_url( 'https://github.com/nosegraze/gwen' ) . '" target="_blank" rel="nofollow">%1$s</a> | <a href="http://thelovelydesign.co/" target="_blank" rel="nofollow">%2$s</a>',
+				__( 'Gwen Theme', 'gwen' ),
+				__( 'Design by The Lovely Design Co,', 'sylvia' )
 			);
 
 			do_action( 'gwen/footer/attribution' ); ?>
