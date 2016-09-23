@@ -971,8 +971,7 @@ article.page {
 .entry-meta .entry-categories a:hover {
   text-decoration: none;
 }
-
-.entry-date:not(.updated) {
+.entry-meta .updated:not(.published) {
   display: none;
 }
 
