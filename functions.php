@@ -125,7 +125,6 @@ function gwen_scripts() {
 	$version = $gwen->get( 'Version' );
 
 	wp_enqueue_style( 'gwen-google-fonts', 'https://fonts.googleapis.com/css?family=Balthazar|Roboto:100,300,700,700i', array(), $version );
-	//wp_enqueue_style( 'gwen-google-fonts', 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,700,700i', array(), $version );
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css', array(), '4.6.1' );
 	wp_enqueue_style( 'gwen', get_stylesheet_uri(), array(), $version );
 	wp_add_inline_style( 'gwen', gwen_get_custom_css() );
